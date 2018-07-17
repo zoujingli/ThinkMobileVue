@@ -9,7 +9,14 @@ Vue.config.productionTip = false
 import 'muse-ui/lib/styles/base.less'
 import 'muse-ui/lib/styles/theme.less'
 
-import {Icon, Card, AppBar, Avatar, Button, BottomNav} from 'muse-ui'
+import {
+    Icon,
+    Card,
+    AppBar,
+    Avatar,
+    Button,
+    BottomNav
+} from 'muse-ui'
 
 Vue.use(Icon)
 Vue.use(Card)
@@ -20,8 +27,9 @@ Vue.use(Avatar)
 Vue.use(BottomNav)
 
 router.beforeEach((to, from, next) => {
-    store.state.navbar = to.meta.navbar
-    store.state.header = to.meta.header
+    // 同步路由参数控制导航条及工具栏
+    store.commit('setHeader', to.meta.header)
+    store.commit('setNavbar', to.meta.navbar)
     next();
 })
 
