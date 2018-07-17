@@ -26,6 +26,7 @@ Vue.use(Button)
 Vue.use(Avatar)
 Vue.use(BottomNav)
 
+// 路由前置操作
 router.beforeEach((to, from, next) => {
     // 同步路由参数控制导航条及工具栏
     store.commit('setHeader', to.meta.header)
@@ -33,4 +34,5 @@ router.beforeEach((to, from, next) => {
     next();
 })
 
+// 实例Vue程序
 new Vue({store, router, el: '#app', components: {App}, template: '<App/>'})
