@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-    navVaule: 'home'
+    header: {},
+    navbar: {},
 }
 const actions = {}
 const mutations = {}

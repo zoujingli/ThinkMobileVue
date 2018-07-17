@@ -3,19 +3,21 @@
         <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
 
         <!-- 顶部导航条 开始 -->
-        <mu-appbar z-depth="3" color="pink" textColor="#fff">
-            <mu-button icon slot="left"></mu-button>
-            {{title}}
+        <mu-appbar v-if="$store.state.header.show" z-depth="3" color="pink" textColor="#fff">
+            <mu-button icon @click="$router.back(-1)" slot="left" v-if="$store.state.header.back">
+                <mu-icon value="keyboard_arrow_left"></mu-icon>
+            </mu-button>
+            {{$store.state.header.text}}
             <mu-button icon slot="right"></mu-button>
         </mu-appbar>
-        <div style="height: 10px"></div>
+        <div v-if="$store.state.header.show" style="height: 10px"></div>
         <!-- 顶部导航条 结束 -->
 
         <router-view></router-view>
 
         <!-- 底部导航条 开始 -->
-        <div style="height:70px"></div>
-        <mu-bottom-nav shift :value.sync="NavVal" id="NavEle" color="pink">
+        <div v-if="$store.state.navbar.show" style="height:70px"></div>
+        <mu-bottom-nav v-if="$store.state.navbar.show" shift :value.sync="$store.state.navbar.item" class="app-nav-bottom" color="pink">
             <mu-bottom-nav-item to="/" value="home" title="首 页" icon="home"></mu-bottom-nav-item>
             <mu-bottom-nav-item to="/order" value="order" title="订 单" icon="reorder"></mu-bottom-nav-item>
             <mu-bottom-nav-item to="/cart" value="cart" title="购物车" icon="books"></mu-bottom-nav-item>
@@ -30,10 +32,7 @@
     export default {
         name: 'App',
         data() {
-            return {
-                NavVal: this.$store.state.navVaule,
-                title: 'ThinkMobileVue',
-            }
+            return {}
         }
     }
 </script>
@@ -51,9 +50,9 @@
         color: #2c3e50;
     }
 
-    #NavEle {
-        position: fixed;
+    .app-nav-bottom {
         bottom: 0;
         width: 100%;
+        position: fixed;
     }
 </style>

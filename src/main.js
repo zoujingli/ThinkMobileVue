@@ -19,4 +19,10 @@ Vue.use(Button)
 Vue.use(Avatar)
 Vue.use(BottomNav)
 
+router.beforeEach((to, from, next) => {
+    store.state.navbar = to.meta.navbar
+    store.state.header = to.meta.header
+    next();
+})
+
 new Vue({store, router, el: '#app', components: {App}, template: '<App/>'})
