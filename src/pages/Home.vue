@@ -1,8 +1,8 @@
 <template>
-    <mu-card style="width: 100%; max-width: 375px; margin: 0 auto;">
+    <mu-card style="width:100%;max-width:375px;margin:0 auto;">
         <mu-card-header title="Myron Avatar" sub-title="sub title">
             <mu-avatar slot="avatar">
-                <img style="width:50px" src="https://muse-ui.org/img/uicon.ac3913bf.jpg">
+                <img src="https://muse-ui.org/img/uicon.ac3913bf.jpg">
             </mu-avatar>
         </mu-card-header>
         <mu-card-media title="Image Title" sub-title="Image Sub Title">

@@ -4,9 +4,7 @@
 
         <!-- 顶部导航条 开始 -->
         <mu-appbar z-depth="3" color="pink" textColor="#fff">
-            <mu-button icon slot="left">
-                <!--<mu-icon value="keyboard_arrow_left"></mu-icon>-->
-            </mu-button>
+            <mu-button icon slot="left"></mu-button>
             {{title}}
             <mu-button icon slot="right"></mu-button>
         </mu-appbar>
@@ -33,8 +31,8 @@
         name: 'App',
         data() {
             return {
-                NavVal: 'home',
-                title: 'ThinkMobile',
+                NavVal: this.$store.state.navVaule,
+                title: 'ThinkMobileVue',
             }
         }
     }
