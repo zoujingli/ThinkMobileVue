@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Home from '@/pages/Home'
-import Order from '@/pages/Order'
-import Cart from '@/pages/Cart'
-import User from '@/pages/User'
+import Home from './pages/Home'
+import Order from './pages/Order'
+import Cart from './pages/Cart'
+import User from './pages/User'
 
 export default new Router({
     routes: [
