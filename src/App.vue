@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
+        <!--<link rel="stylesheet" href="static/iconfont/font.css">-->
 
         <!-- 顶部导航条 开始 -->
         <mu-appbar v-if="$store.state.header.show" z-depth="3" color="pink" textColor="#fff">
