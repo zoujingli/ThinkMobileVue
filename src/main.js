@@ -6,8 +6,8 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import './assets/icons/font.css'
 import 'muse-ui/lib/styles/base.less'
-import '../static/icons/font.css'
 
 import {
     Icon,
