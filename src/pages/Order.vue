@@ -38,7 +38,7 @@
     export default {
         data() {
             return {
-                num: 10,
+                num: 20,
                 text: 'List',
                 loading: false,
                 refreshing: false,
@@ -49,7 +49,7 @@
                 this.refreshing = true
                 this.$refs.container.scrollTop = 0
                 setTimeout(() => {
-                    this.num = 10
+                    this.num = 20
                     this.refreshing = false
                     this.text = this.text === 'List' ? 'Menu' : 'List'
                 }, 2000)
@@ -57,7 +57,7 @@
             load() {
                 this.loading = true
                 setTimeout(() => {
-                    this.num += 10
+                    this.num += 20
                     this.loading = false
                 }, 2000)
             }
