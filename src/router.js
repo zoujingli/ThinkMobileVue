@@ -23,7 +23,7 @@ export default new Router({
             name: 'Order',
             meta: {
                 header: {show: true, back: true, text: 'ThinkMobileVue'},
-                navbar: {show: true, item: 'home'},
+                navbar: {show: true, item: 'order'},
             },
             component: Order
         }, {
