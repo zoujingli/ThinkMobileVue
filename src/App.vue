@@ -13,18 +13,20 @@
         </mu-appbar>
         <!-- 顶部导航条 结束 -->
 
+        <!-- 页面内容 开始 -->
         <div :style="appContentStyle()" class="app-content">
             <router-view></router-view>
         </div>
+        <!-- 页面内容 结束 -->
 
-        <!-- 底部导航条 开始 -->
+        <!-- 底部工具栏 开始 -->
         <mu-bottom-nav v-if="$store.state.navbar.show" shift :value.sync="$store.state.navbar.item" class="app-navbar" color="pink">
             <mu-bottom-nav-item to="/" value="home" title="首 页" icon="home"></mu-bottom-nav-item>
             <mu-bottom-nav-item to="/order" value="order" title="订 单" icon="reorder"></mu-bottom-nav-item>
             <mu-bottom-nav-item to="/cart" value="cart" title="购物车" icon="books"></mu-bottom-nav-item>
             <mu-bottom-nav-item to="/user" value="user" title="会 员" icon="person"></mu-bottom-nav-item>
         </mu-bottom-nav>
-        <!-- 底部导航条 结束 -->
+        <!-- 底部工具栏 结束 -->
 
     </div>
 </template>
