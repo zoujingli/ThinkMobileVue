@@ -13,6 +13,7 @@ const actions = {}
 const mutations = {
     // 更新导航条参数
     setHeader: (state, option) => {
+        document.title = option.text || ''
         state.header.text = option.text || ''
         state.header.show = option.show || false
         state.header.back = option.back || false

@@ -13,35 +13,35 @@ export default new Router({
         {
             path: '/',
             name: 'Home',
+            component: Home,
             meta: {
-                header: {show: true, back: false, text: 'ThinkMobileVue'},
+                header: {show: true, back: false, text: '商城首页'},
                 navbar: {show: true, item: 'home'},
             },
-            component: Home
         }, {
-            path: '/order',
             name: 'Order',
+            path: '/order',
+            component: Order,
             meta: {
-                header: {show: true, back: true, text: 'ThinkMobileVue'},
+                header: {show: true, back: true, text: '我的订单'},
                 navbar: {show: true, item: 'order'},
             },
-            component: Order
         }, {
-            path: '/cart',
             name: 'Cart',
+            path: '/cart',
+            component: Cart,
             meta: {
-                header: {show: true, back: true, text: 'ThinkMobileVue'},
+                header: {show: true, back: true, text: '购物车'},
                 navbar: {show: true, item: 'cart'},
             },
-            component: Cart
         }, {
-            path: '/user',
             name: 'User',
+            path: '/user',
+            component: User,
             meta: {
-                header: {show: true, back: true, text: 'ThinkMobileVue'},
+                header: {show: true, back: true, text: '会员中心'},
                 navbar: {show: true, item: 'user'},
             },
-            component: User
         }
     ]
 })
