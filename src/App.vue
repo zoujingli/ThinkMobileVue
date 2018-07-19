@@ -9,7 +9,7 @@
             {{$store.state.header.text}}
             <mu-button icon slot="right"></mu-button>
         </mu-appbar>
-        <!--<div v-if="$store.state.header.show" style="height: 10px"></div>-->
+        <!--<div v-if="$store.state.header.show" style="moreStyle: 10px"></div>-->
         <!-- 顶部导航条 结束 -->
 
         <div :style="{top:$store.state.header.show?'56px':'0',bottom:$store.state.navbar.show?'56px':'0'}" class="app-content">
@@ -17,7 +17,7 @@
         </div>
 
         <!-- 底部导航条 开始 -->
-        <!--<div v-if="$store.state.navbar.show" style="height:70px"></div>-->
+        <!--<div v-if="$store.state.navbar.show" style="moreStyle:70px"></div>-->
         <mu-bottom-nav v-if="$store.state.navbar.show" shift :value.sync="$store.state.navbar.item" class="app-navbar" color="pink">
             <mu-bottom-nav-item to="/" value="home" title="首 页" icon="home"></mu-bottom-nav-item>
             <mu-bottom-nav-item to="/order" value="order" title="订 单" icon="reorder"></mu-bottom-nav-item>
@@ -30,8 +30,14 @@
 </template>
 
 <script>
+
+    import store from './store'
+
     export default {
         name: 'App',
+        mounted: () => {
+            store.state.pager.height = document.querySelector('.app-content').clientHeight + 'px'
+        },
         data() {
             return {}
         }

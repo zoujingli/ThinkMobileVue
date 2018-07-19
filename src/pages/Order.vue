@@ -1,35 +1,33 @@
 <template>
     <div>
         <mu-paper :z-depth="1" class="demo-loadmore-wrap">
-            <div ref="container" class="demo-loadmore-content">
+            <mu-container ref="container" class="demo-loadmore-content">
                 <mu-load-more @refresh="refresh" :refreshing="refreshing" :loading="loading" @load="load">
                     <mu-list>
                         <template v-for="i in num">
                             <mu-list-item>
                                 <mu-list-item-title>{{text}} Item {{i}}</mu-list-item-title>
                             </mu-list-item>
-                            <mu-divider />
+                            <mu-divider/>
                         </template>
                     </mu-list>
                 </mu-load-more>
-            </div>
+            </mu-container>
         </mu-paper>
-
     </div>
 </template>
-
 
 <style lang="less">
     .demo-loadmore-wrap {
         width: 100%;
-        max-width: 360px;
-        height: 100%;
         display: flex;
+        height: 500px;
         flex-direction: column;
         .mu-appbar {
             width: 100%;
         }
     }
+
     .demo-loadmore-content {
         flex: 1;
         overflow: auto;
@@ -39,31 +37,31 @@
 
 <script>
     export default {
-        data () {
+        data() {
             return {
                 num: 10,
-                refreshing: false,
+                text: 'List',
                 loading: false,
-                text: 'List'
+                refreshing: false,
             }
         },
         methods: {
-            refresh () {
-                this.refreshing = true;
-                this.$refs.container.scrollTop = 0;
+            refresh() {
+                this.refreshing = true
+                this.$refs.container.scrollTop = 0
                 setTimeout(() => {
-                    this.refreshing = false;
-                    this.text = this.text === 'List' ? 'Menu' : 'List';
-                    this.num = 10;
+                    this.num = 10
+                    this.refreshing = false
+                    this.text = this.text === 'List' ? 'Menu' : 'List'
                 }, 2000)
             },
-            load () {
-                this.loading = true;
+            load() {
+                this.loading = true
                 setTimeout(() => {
-                    this.loading = false;
-                    this.num += 10;
+                    this.num += 10
+                    this.loading = false
                 }, 2000)
             }
         }
-    };
+    }
 </script>

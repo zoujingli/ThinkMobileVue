@@ -11,6 +11,7 @@ import 'muse-ui/lib/styles/base.less'
 
 import {
     Icon,
+    Grid,
     Card,
     List,
     Paper,
@@ -23,7 +24,7 @@ import {
 } from 'muse-ui'
 
 Vue.use(Icon)
-Vue.use(Divider)
+Vue.use(Grid)
 Vue.use(Card)
 Vue.use(Paper)
 Vue.use(List)
@@ -31,6 +32,7 @@ Vue.use(Vuex)
 Vue.use(AppBar)
 Vue.use(Button)
 Vue.use(Avatar)
+Vue.use(Divider)
 Vue.use(LoadMore)
 Vue.use(BottomNav)
 
@@ -43,7 +45,6 @@ Vue.prototype.axios = axios;
 // 路由前置操作
 router.beforeEach((to, from, next) => {
     // 同步路由参数控制导航条及工具栏
-    console.log(to.meta);
     store.commit('setHeader', to.meta.header)
     store.commit('setNavbar', to.meta.navbar)
     next();
