@@ -13,7 +13,7 @@
         </mu-appbar>
         <!-- 顶部导航条 结束 -->
 
-        <div :style="{top:$store.state.header.show?'56px':'0',bottom:$store.state.navbar.show?'56px':'0'}" class="app-content">
+        <div :style="appContentStyle()" class="app-content">
             <router-view></router-view>
         </div>
 
@@ -30,12 +30,27 @@
 </template>
 
 <script>
+
+    import store from './store'
+
     export default {
         name: 'App',
+        mounted() {
+            store.state.pager.height = document.querySelector('.app-content').clientHeight + 'px'
+        },
         data() {
             return {}
+        },
+        methods: {
+            appContentStyle() {
+                return {
+                    top: store.state.header.show ? '56px' : '0',
+                    bottom: store.state.navbar.show ? '56px' : '0'
+                }
+            }
         }
     }
+
 </script>
 
 <style>

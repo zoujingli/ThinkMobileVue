@@ -1,6 +1,6 @@
 <template>
     <div>
-        <mu-paper :z-depth="1" class="demo-loadmore-wrap">
+        <mu-paper :z-depth="1" :style="{height:$store.state.pager.height}" class="demo-loadmore-wrap">
             <mu-container ref="container" class="demo-loadmore-content">
                 <mu-load-more @refresh="refresh" :refreshing="refreshing" :loading="loading" @load="load">
                     <mu-list>
@@ -21,7 +21,6 @@
     .demo-loadmore-wrap {
         width: 100%;
         display: flex;
-        /*height: 500px;*/
         flex-direction: column;
         .mu-appbar {
             width: 100%;
