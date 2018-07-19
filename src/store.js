@@ -4,9 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+    cache: {},
     pager: {height: '100%'},
-    header: {show: false, text: '', back: false},
     navbar: {item: 'home', show: false},
+    header: {show: false, text: '', back: false},
 }
 
 const actions = {}

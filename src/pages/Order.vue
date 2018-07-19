@@ -21,7 +21,7 @@
     .demo-loadmore-wrap {
         width: 100%;
         display: flex;
-        height: 500px;
+        /*height: 500px;*/
         flex-direction: column;
         .mu-appbar {
             width: 100%;
